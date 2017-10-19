@@ -8,3 +8,5 @@
 4. Commit and push the folder
 5. Create a pull request. 
 
+
+Check the demo folder for help with the directory structure
