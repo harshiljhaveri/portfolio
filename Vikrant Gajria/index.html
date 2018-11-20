@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="Vikrant Gajria">
+  <meta name="description" content="An orgnaism which converts coffee into computer understandable language.">
+  <meta name="keywords" content="blog,developer,personal">
+  
+  <title>Vixrant</title>
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700">
+  <link rel="stylesheet" href="//cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
+  <link rel="stylesheet" href="./style.min.css">
+  
+  
+  <link rel="icon" type="image/png" href="http://localhost:1313/images/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="http://localhost:1313/images/favicon-16x16.png" sizes="16x16">
+  
+  <style>
+    
+    canvas {
+      width: 100%;
+      height: 100%;
+      display: block;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -9999;
+    }
+  </style>
+  
+</head>
+
+<body class="">
+  
+  <!-- Wallpaper of Word Cloud -->
+  <canvas width="1000" height="1000" id="can"></canvas>
+  
+  <main class="wrapper">
+    <nav class="navigation">
+      <section class="container">
+        <a class="navigation-title" href="https://www.vikrant.ga/">
+          Visit Vikrant.ga
+        </a>
+        <ul class="navigation-list  float-right ">
+          
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://goo.gl/8YszZv">Résumé</a>
+          </li>
+          
+        </ul>
+      </section>
+    </nav>
+    
+    
+    <div class="content">
+      
+      <section class="container centered">
+        <div class="about">
+          
+          <div class="avatar"><img src="./profile.png" alt="avatar"></div>
+          
+          <h1>Vikrant Gajria</h1>
+          <h2>Full Stack Developer</h2>
+          
+          <ul>
+            
+            <li><a href="https://github.com/vixrant/">Github</a></li>
+            
+            <li><a href="https://gitlab.com/vixrant/">Gitlab</a></li>
+            
+            <li><a href="https://twitter.com/vixrant/">Twitter</a></li>
+            
+            <li><a href="https://linkedin.com/in/johndoe/">LinkedIn</a></li>
+            
+            <li><a href="https://Facebook.com/vixrant/">Facebook</a></li>
+            
+            <li><a href="https://Instagram.com/vikrantgajria/">Instagram</a></li>
+            
+          </ul>
+          
+        </div>
+      </section>
+      
+      
+    </div>
+    
+    <footer class="footer">
+      <section class="container">
+        
+        
+        
+      </section>
+    </footer>
+    
+  </main>
+  
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/wordcloud2.js/1.1.0/wordcloud2.min.js"></script>
+  <script>
+    var canvas = document.getElementById('can');
+    
+    var list = [
+    ['HTML5', 4],
+    ['CSS3', 4],
+    ['ES6', 3],
+    ['JAVASCRIPT', 8],
+    ['JAVA', 6],
+    ['C', 6],
+    ['C++', 7],
+    ['PYTHON', 8],
+    ['C#', 4],
+    ['RUBY', 3],
+    ['LUA', 3],
+    
+    ['REACT', 7],
+    ['REACT NATIVE', 5],
+    ['VUE', 5],
+    ['BOOTSTRAP',  7],
+    ['SEMANTIC UI',  5],
+    ['MATERIAL UI', 5],
+    ['JQUERY', 4],
+    
+    ['DJANGO', 7],
+    ['DRF', 5],
+    ['EXPRESS',  6],
+    ['NODE', 4],
+    ['MERN', 8],
+    
+    ['SQL', 7],
+    ['SQLITE3', 3],
+    ['POSTGRES', 4],
+    ['MONGODB', 7],
+    ['MONGOOSE', 5],
+    
+    ['GIT', 6],
+    ['GCP', 5],
+    ['AWS', 4],
+    ['FIREBASE', 4],
+    ]
+    
+    var config = {
+      gridSize: Math.round(16 * document.body.scrollWidth/1024),
+      weightFactor: function (size) {
+        return Math.pow(size, 2) * document.body.scrollWidth/2048;
+      },
+      fontFamily: 'Fira Mono',
+      color: '#eee',
+      rotateRatio: 0.5,
+      rotationSteps: 2,
+      backgroundColor: '#ffffff',
+      
+      list
+    }
+    
+    WordCloud(canvas, config);
+    
+  </script>
+  
+  </html>
