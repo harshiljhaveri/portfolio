@@ -1,0 +1,162 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+	 <meta charset="utf-8">
+	<title></title>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+	<link rel="stylesheet" href="templateres.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body >
+	<header>
+		<div ></div>
+	</header>
+	<img src="https://github.com/ananyamalik/Front-End/blob/master/GITPROFILE.jpeg?raw=true">
+	<br>
+	<section>
+		
+	</section>
+	<p>
+	</p>
+
+
+
+<script >
+	
+	var header = document.querySelector('header');//Storing the header variables
+	var section = document.querySelector('section');//Storing the section variables
+	var requestURL = 'https://raw.githubusercontent.com/ananyamalik/ananyamalik.github.io/master/Resume_success.json';//Requesting JSON file
+	var request = new XMLHttpRequest();//Creating an object called request using API XMLHttpRequest()
+	request.open('GET', requestURL,true);//Open a new request
+	request.responseType = 'json';//opeining a response tyoe of object request so that the server knows we are opening a json type
+	request.send();//Sending the request
+	request.onload = function() {//Onload loads the request into the function
+	  var resume = request.response;//creating variable to load the request
+	//  var resume = JSON.parse(resumeText);
+	console.log(resume);
+	  populateHeader(resume);//Create a function to add elements to the initial header(title). Resume is the detailed 
+	  showDetails(resume);//access a function to add elements to the section..SHOW CONTACT AND PERSONAL DETAILS
+	  showEducation(resume);//access a function to add elements to the section..SHOWING education details
+	  showSkills(resume);//access a function to add skills to the section.
+
+	}
+function populateHeader(myObj) {
+
+  var hea= document.createElement('h1');
+  hea.textContent = "RESUME";
+  header.appendChild(hea);
+
+  var deta = document.createElement('div');
+  deta.textContent="Name:  "+ myObj['name'];
+  header.appendChild(deta);
+  var dete = document.createElement('p');
+  dete.textContent+="JOB:  "+ myObj['job'] + " (Computer Engineering)" ;
+  header.appendChild(dete);
+  var prof= document.createElement('p');
+   prof.textContent += "    Date Of Birth:     \n"+ myObj['dob'];
+  header.appendChild(prof);
+  
+}
+function showDetails(obj) {
+	var cont= document.createElement('h2');
+	var emailadd= document.createElement('p');
+	var phonenum= document.createElement('p');
+	var add= document.createElement('p');
+
+	cont.textContent= "CONTACT DETAILS";
+	section.appendChild(cont);
+	emailadd.textContent= "Email Address: \t"+ obj['email'];
+	section.appendChild(emailadd);
+	phonenum.textContent="Phone Number: \t" + obj['phone'];
+	section.appendChild(phonenum);
+	add.textContent= "Address:  \n"+obj["address"];
+	section.appendChild(add);
+}
+function showEducation(obj){
+	var x= document.createElement('h2');
+		x.textContent=" EDUCTAION";
+		section.appendChild(x);
+	var edu = obj['education'];
+	for (var i = 0; i < edu.length; i++){
+
+		var n= document.createElement('h3');
+		var yjoin= document.createElement('ul');
+		var ypass=document.createElement('ul');
+		var deg= document.createElement('ul');
+		var grade=document.createElement('ul');
+		n.textContent= edu[i].name
+		yjoin.textContent="Year of joining:   "+edu[i].year_of_joining;
+		ypass.textContent="Year of graduating:   "+edu[i].year_of_passing;
+		deg.textContent="Degree recieved:   "+edu[i].degree;
+		grade.textContent="Marks obtained:   "+edu[i].percentage;
+		section.appendChild(n);
+		section.appendChild(yjoin);
+		section.appendChild(ypass);
+		section.appendChild(deg);
+		section.appendChild(grade);
+		
+	}
+}
+
+function showSkills(obj){
+		var x= document.createElement('h2');
+		x.textContent=" SKILLS";
+		section.appendChild(x);
+		var skill= obj['skills'];
+		var web= document.createElement('h4');
+		web.textContent=skill['name'];
+		section.appendChild(web);
+		var key= skill['keywords'];
+		for(var j=0;j<key.length;j++){
+
+			var lang=document.createElement('ol');
+			lang.textContent=key[j];
+			section.appendChild(lang);
+		}
+	}
+
+</script>
+<div class="section"
+<h4><center>Bootstrap</center><br>
+<h4><center>ReactJs</center><br>
+<h4><center>Back-end Development using Django</center><br>
+</h4></h4>
+
+<h2><center>INTERESTS</center>
+	<h4>Coding</h4><br>
+	<h4>Reading and Writing</h4><br>
+	<h4>Photography</h4><br>
+	<h4>Politics</h4>
+</h2></div>
+<hr>
+<br>
+<p><center>
+
+	<hr><br>
+		<a href="mailto:ananyamalik1999@gmail.com">
+          <span class="glyphicon glyphicon-envelope"></span>
+        </a>
+
+
+        
+        <i class="fa fa-github" style="font-size:24px">
+        	<a href="https://github.com/ananyamalik">
+        		GitHub
+        	</a>
+        </i>
+			
+		</i>
+		<i style="font-size:24px" class="fa">
+			<a href="https://www.linkedin.com/in/ananya-malik-9b6965170/">&#xf08c;</a>
+		</i>
+
+	</center>
+	<br><center><a href="</center>
+</p>
+</body>
+</html>
