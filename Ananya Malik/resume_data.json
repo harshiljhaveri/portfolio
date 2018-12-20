@@ -1,0 +1,40 @@
+{
+ "name": "Ananya Malik",
+    "job":  "Student",
+    "picture": "",
+    "dob":"28-01-1999",
+    "email": "ananyamalik1999@gmail.com",
+    "phone": "7506402445",
+    "address": "201-202, Kalpana Building, Khar(West), Mumbai-400052, Maharashtra, India",
+    "education" : [
+   {
+        "name":"Arya Vidya Mandir",
+      "year_of_joining":"2002",
+      "year_of_passing":"2015",
+      "degree":"ICSE",
+      "percentage":"96.17"
+    },
+    {
+      "name":"Pace Science Junior College,Andheri",
+      "year_of_joining":"2015",
+      "year_of_passing":"2017",
+      "degree":"HSC",
+      "percentage":"88.9%"
+    },
+    {
+      "name":"DJ Sanghvi College Of Engineering",
+      "year_of_joining":"2017",
+      "year_of_passing":"2021(expected)",
+      "degree":"BE",
+      "percentage":"--"
+    }
+  ],
+  "skills": {
+    "name": "Web Development",
+    "keywords": [
+      "HTML",
+      "CSS",
+      "Javascript"
+    ]
+  }
+  }
