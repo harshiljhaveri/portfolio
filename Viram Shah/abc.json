@@ -1,0 +1,95 @@
+{
+	"email":"viram1999@gmail.com",
+	"mobile":"8879490461",
+	"dob":"19/04/1999",
+	"objective":"To be able to work for an encouraging and stable company that assist me in developing, improving and obtaining the necessary skills in order to become the best engineer possible",
+	"dj":[
+		{
+		"name":"D.J.Sanghvi College of Engineering",
+		"time":"2017-2018",
+		"location":"Mumbai",
+		"course":"Computer Engineering",
+		"cgpa1":"CGPA=9.48 (sem I)",
+		"cgpa2":"CGPA=9.15 (sem II)"
+	}
+],
+	"pace":[
+		{
+		"name":"Pace Junior Science College",
+		"time":"2015-2017",
+		"location":"Mumbai",
+		"course":"Pace junior science college",
+		"percent":"HSC Percentage = 86%",
+		"study":"Vocation Subject : Computer Science which included c++ programming language."
+	}],
+
+	"ca":[
+		{
+			"name":"Children's Academy",
+		"time":"2005-2015",
+		"location":"Mumbai",
+		"course":"Children's Academy",
+		"percent":"ICSE Percentage = 95%",
+		"study":"Vocation Subject : Computer Science which included java object oriented programming language."
+	}],
+	"cp":[{
+		"name":"Digital Vault Services Limited",
+		"time":"June-July,2018",
+		"title":"Web Developer",
+		"detail":"Financial well-being platform,capitalpeg.com helps investors used to traditional asset classes gain right awareness and product knowledge about a new age,volatile, yet more rewarding, investing option-equity shares and mutual funds"
+
+		}],
+	"project":[
+		{
+			"name":"CAPITAL PEG",
+			"detail":"Worked on the Website ​<a href='https://capitalpeg.com/'> Capital Peg </a>and Lead the frontend development team to make the product prototype for our company."		
+		},
+		{
+		 "name":"TRADER WEBSITE",
+		 "detail":"A PHP project which uses  MySQL as the database with frontend made with Bootstrap3 and CSS3."
+		},
+		{
+		 "name":"IRCTC WEBPAGE",
+		 "detail":"A Mobile-responsive Html page which uses  Bootstrap 4 and JQuery "
+		}
+		
+	
+],
+	"skill":[
+		{
+			"name":"Languages",
+			"type":"JAVA, JAVASCRIPT, C, C++ "
+		},
+		{
+			"name":"Frontend Development",
+			"type":"TECHNOLOGIES: HTML5, CSS3, BOOTSTRAP 4 ,JQUERY"
+		},
+		{
+			"name":"Backend Development",
+			"type":"TECHNOLOGIES: PHP, MySQL"
+		}
+
+	],
+	"softskill":[
+		{
+			"name":"Leadership Qualities"
+		},
+		{
+			"name":"Confident Speaker"
+		},
+		{
+			"name":"Time Management"
+		},
+		{
+			"name":"Hard-working"
+
+		},
+		{
+			"name":"Creative"
+		},
+		{
+			"name":"Quick Learner"
+		}
+	]
+	
+}

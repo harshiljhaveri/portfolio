@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <charset utf-8> 
+    <meta charset="utf-8">
+    <script src="script.js"></script>
+   <link rel="stylesheet" type="text/css" href="style1.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+  <title></title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script>
+var showText = function (target, message, index, interval) {    
+  if (index < message.length) { 
+    $(target).append(message[index++]); 
+    setTimeout(function () { showText(target, message, index, interval); }, interval); 
+  } 
+}
+    
+$(function () { 
+ 
+  showText("#msg1", "VIRAM SHAH", 0, 300);    
+ 
+}); 
+ 
+
+</script>
+<script type="text/javascript">
+    var showText = function (target, message, index, interval) {    
+  if (index < message.length) { 
+    $(target).append(message[index++]); 
+    setTimeout(function () { showText(target, message, index, interval); }, interval); 
+  } 
+}
+    
+$(function () { 
+ 
+  showText("#msg2", "Web Developer", 0, 300);    
+ 
+}); 
+    
+</script>
+<script type="text/javascript">
+      $(window).on("load",function() {
+  $(window).scroll(function() {
+    var windowBottom = $(this).scrollTop() + $(this).innerHeight();
+    $(".fade").each(function() {
+      /* Check the location of each desired element */
+      var objectBottom = $(this).offset().top + $(this).outerHeight();
+      
+      /* If the element is completely within bounds of the window, fade it in*/ 
+      if (objectBottom < windowBottom) 
+      { //object comes into view (scrolling down)
+        if ($(this).css("opacity")==0) 
+            {
+                $(this).fadeTo(500,1);
+        
+            }
+      }
+       else 
+       { //object goes out of view (scrolling up)
+        if ($(this).css("opacity")==1)
+         {
+            $(this).fadeTo(500,1);
+        }
+      }
+    });
+  }).scroll(); //invoke scroll-handler on page-load
+});
+
+</script>
+    
+  <script type="text/javascript">
+    
+    function getdata()
+    {
+        
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function(){
+            if(xhttp.readyState==4 && xhttp.status==200)
+            {
+                var javaobj = JSON.parse(xhttp.response);
+                document.getElementById('email').innerHTML=javaobj.email;
+                document.getElementById('mobile').innerHTML=javaobj.mobile;
+                document.getElementById('dob').innerHTML=javaobj.dob;
+
+                 document.getElementById('objective').innerHTML=javaobj.objective;
+
+                  document.getElementById('time').innerHTML=javaobj.dj[0].time;
+                  document.getElementById('name').innerHTML= javaobj.dj[0].name;
+                 for(let semester of javaobj.dj){
+                      document.getElementById('course').innerHTML=document.getElementById('course').innerHTML+"<b>"+ semester.course + "</b>"+"<br>";
+                      document.getElementById('course').innerHTML= document.getElementById('course').innerHTML+semester.cgpa1+"<br>";
+                       document.getElementById('course').innerHTML= document.getElementById('course').innerHTML+semester.cgpa2+"<br>";
+
+
+                    }
+                     document.getElementById('time2').innerHTML=javaobj.pace[0].time;
+                      document.getElementById('name2').innerHTML= javaobj.pace[0].name + "<br>";
+                    for(let semester1 of javaobj.pace){
+                      
+                      document.getElementById('course2').innerHTML=document.getElementById('course2').innerHTML   + "<b>" + semester1.percent+"</b>"+"<br>";
+                       document.getElementById('course2').innerHTML=document.getElementById('course2').innerHTML+semester1.study+"<br>";
+
+                    }
+                    
+                       document.getElementById('time3').innerHTML=javaobj.ca[0].time;
+                       document.getElementById('name3').innerHTML= javaobj.ca[0].name + "<br>";
+                       for(let semester of javaobj.ca){
+                         
+                      document.getElementById('course3').innerHTML=document.getElementById('course3').innerHTML   + "<b>"+semester.percent+"</b>"+"<br>";
+                      document.getElementById('course3').innerHTML=document.getElementById('course3').innerHTML+semester.study+"<br>";
+
+                       }
+
+                       document.getElementById('time4').innerHTML=javaobj.cp[0].time;
+                       document.getElementById('name4').innerHTML= javaobj.cp[0].name + "<br>";
+                       for(let semester of javaobj.cp){
+                         
+                      document.getElementById('title').innerHTML=document.getElementById('title').innerHTML+"<b>"+semester.title+"</b>"+"<br>";
+                      document.getElementById('detail').innerHTML=document.getElementById('detail').innerHTML+semester.detail+"<br>";
+
+                       }
+                       var txt="";
+                       var len=javaobj.project.length;
+                       
+                        for(let semester of javaobj.project){
+                         txt ="<tr><td>"+semester.name+"</td><td>"+semester.detail+"</td></tr>";
+                        
+                        $("#table").append(txt);
+
+                       }
+                       var txt2="";
+                       var len2=javaobj.skill.length;
+                      
+                      for(let semester of javaobj.skill){
+                         txt2 ="<tr><td>"+semester.name+"</td><td>"+semester.type+"</td></tr>";
+                        
+                        $("#table2").append(txt2);
+
+                       } 
+                      
+                       document.getElementById('softskill1').innerHTML=javaobj.softskill[0].name +"<br>";
+                       document.getElementById('softskill2').innerHTML=javaobj.softskill[1].name;
+                       document.getElementById('softskill3').innerHTML=javaobj.softskill[2].name;
+                       document.getElementById('softskill4').innerHTML=javaobj.softskill[3].name;
+                       document.getElementById('softskill5').innerHTML=javaobj.softskill[4].name;
+                       document.getElementById('softskill6').innerHTML=javaobj.softskill[5].name;
+                }
+
+            }
+            xhttp.open("GET","abc.json",true);
+            xhttp.send();
+
+    }
+  </script>
+ 
+    
+</head>
+<body onload="getdata()"  >
+<nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
+  <a class="navbar-brand" href="#viram"  >VIRAM SHAH</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse w-100 order-3 dual-collapse2" id="collapsibleNavbar" style="z-index: 1">
+    <ul class="navbar-nav ml-auto " style="z-index: 1;">
+      <li class="nav-item">
+        <a class="nav-link" href="#objective0">Objective</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#education0">Education</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#work0">Work Experience</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#pro0">Projects</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#tech0">Technical Skills</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#soft0">Soft-Skills</a>
+      </li>    
+    </ul>
+  </div>  
+</nav>
+
+<div class="jumbotron" style="position: relative;background-image: url('background.jpg');background-repeat: no-repeat;background-size: cover;" id="viram">
+    <div class="row">
+        <div class="col-sm-2">
+        </div>
+        <div class="col-sm-8">
+            <div class="card fadeInLeft" style="margin-top: 6%;border: white;background-color:white;position: relative;">
+  
+    <div class="row" >
+        <div class="col-lg-6 justify-content-center">
+             <center><img class="card-img-top" src="viram.jpg" alt="Card image" style="width:100%;height:100%;float: left;"></center>
+        </div>
+        <div class="col-lg-6" style="">
+            <div class="card-body">
+     <b> <h1 class="card-title" id="msg1"></h1></b>
+      <h6 id="msg2"></h6><br>
+      <p class="card-text"></p>
+      <h5><b>Email id:</b></h5>
+      <h6 id="email"></h6>
+      <h5><b>Mobile Number:</b></h5>
+      <h6 id="mobile"></h6>
+      <h5><b>Date Of Birth:</b></h5>
+      <h6 id="dob"></h6>
+    
+    <br>
+    <br>
+    <script type="text/javascript">
+        $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+    </script>
+            <a href="https://github.com/viram-ms" data-toggle="tooltip" data-placement="bottom" title="github.com"><i class="fab fa-github" aria-hidden="true" style="font-size: 40px;letter-spacing: 30px;color: black;"></i></a>
+            <a href="https://bitbucket.org/viram-ms/" data-toggle="tooltip" data-placement="bottom" title="bitbucket.org"><i class="fab fa-bitbucket" aria-hidden="true"  style="font-size: 40px;letter-spacing: 30px;color: black;"></i></a>
+            <a href="https://www.facebook.com/viram.shah.7" data-toggle="tooltip" data-placement="bottom" title="facebook.com"><i class="fab fa-facebook" aria-hidden="true"  style="font-size: 40px;letter-spacing: 30px;color: black;"></i></a>
+            <a href="https://www.linkedin.com/in/viram-shah-31047a150/" data-toggle="tooltip" data-placement="bottom" title="linkedin.com"><i class="fab fa-linkedin" aria-hidden="true"  style="font-size: 40px;letter-spacing: 30px;color: black;"></i></a>
+        </div>
+    </div>    
+    </div>
+  </div>
+        </div>
+        <div class="col-sm-2">
+        </div>
+    </div>  
+  </div>
+  <br>
+  <br>
+  <div class="container justify-content-center fade">
+    <center><h1 id="objective0">OBJECTIVE</h1></center>
+    <hr>
+    <center><p id="objective" style="font-size: 20px;"></p></center>
+
+  </div>
+  <hr>
+  <div class="container ">
+    <br>
+    <center><h1 class="fade" id="education0">EDUCATION</h1></center><hr>
+    <BR>
+    <div class="row">
+        <div class="col-sm-5 fade">
+            <b><h4 id="name"  class="float-sm-right float-left "></h4></b><br><br>
+            <h5><u  id="time" class="float-sm-right float-left"></u></h5><br>
+            
+        </div>
+        <div class="col-sm-7 fade">
+            <p id="course" style="font-size: 18px;"></p>          
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-5 fade">
+            <b><h4 id="name2"  class="float-sm-right float-left "></h4></b><br><br>
+            <h5><u  id="time2" class="float-sm-right float-left"></u></h5><br>
+            
+        </div>
+        <div class="col-sm-7 fade">
+            <p id="course2" style="font-size: 18px;"></p>
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-5 fade">
+            <b><h4 id="name3"  class="float-sm-right float-left "></h4></b><br><br>
+            <h5><u  id="time3" class="float-sm-right float-left"></u></h5>
+            
+        </div>
+        <div class="col-sm-7 fade">
+            <p id="course3" style="font-size: 18px"></p>
+            
+        </div>
+    </div>
+  </div>
+  <hr>
+  <div class="container ">
+    <br>
+    <center><h1 class="fade" id="work0">WORK EXPERIENCE</h1></center><hr>
+    <BR>
+    <div class="row">
+        <div class="col-sm-5 fade">
+            <b><h4 id="name4"  class="float-sm-right float-left "></h4></b><br><br>
+            <h5><u  id="time4" class="float-sm-right float-left"></u></h5><br>
+        </div>
+        <div class="col-sm-7 fade">
+            <p id="title" style="font-size: 22px"></p>
+            <p id="detail" style="font-size:18px"></p>
+        </div>
+    </div>
+  </div>
+<hr>
+  <div class="container ">
+    <br>
+    <center><h1 class="fade" id="pro0">PROJECTS</h1></center>
+    <BR>
+    <div class="table-responsive">
+<table class="table table-hover" id="table" style="border: none;">
+  <thead class="thead-dark fade">
+    <tr>
+   
+      <th scope="col" >PROJECT NAME</th>
+      <th scope="col">DETAILS</th>
+  
+    </tr>
+  </thead>
+  <tbody class="fade">
+    
+  </tbody>
+</table>
+</div>
+    
+  </div>
+<hr>
+  <div class="container ">
+    <br>
+    <center><h1 class="fade" id="tech0">TECHNICAL SKILLS</h1></center>
+    <BR>
+       <div class="table-responsive">
+<table class="table table-borderless table-hover " id="table2" style="border: none;">
+  <thead class="thead-dark fade"> 
+    <tr class="fade" >
+   
+      <th scope="col" >SKILLS</th>
+      <th scope="col">DETAILS</th>
+  
+    </tr>
+  </thead>
+  <tbody class="fade">
+    
+  </tbody>
+</table>
+</div>
+   
+      
+  </div>
+  <hr>
+  <div class=" " style="background-image: url('background3.jpg');">
+  <div class="container" >
+    <br>
+    <center><h1 class="fade" id="soft0" style="color: white;">SOFT SKILLS</h1></center>
+    <br>
+    <div class="row mb-sm-2">
+        <div class="col-sm-6 mb-2 "><button id="softskill1"  class="btn fade" style="width: 100%;font-size: 25px;color: white;cursor: context-menu;background-color: #1e2939;"></button></div>
+        <div class="col-sm-6 mb-2"><button id="softskill2"  class="btn  fade"  style="width: 100%;font-size: 25px;cursor: context-menu;background-color: #1e2939;color: white"></button></div>
+    </div>
+    
+    <div class="row  mb-sm-2">
+        <div class="col-sm-6 mb-2"><button id="softskill3"  class="btn fade" style="width: 100%;font-size: 25px;color: white;cursor: context-menu;background-color: #1e2939;" ></button></div><br>
+        <div class="col-sm-6 mb-2"><button id="softskill4"  class="btn  fade" style="width: 100%;font-size: 25px;color: white;cursor: context-menu;background-color: #1e2939;" ></button></div><br>
+    </div>
+    
+        <div class="row mb-sm-2">
+        <div class="col-sm-6 mb-2"><button id="softskill5"  class="btn  fade" style="width: 100%;font-size: 25px;color: white;cursor: context-menu;background-color: #1e2939;" ></button></div>
+        <div class="col-sm-6 mb-5"><button id="softskill6"  class="btn  fade" style="width: 100%;font-size: 25px;color: white;cursor: context-menu;background-color: #1e2939;" ></button></div>
+    </div>     
+  </div>
+</div>
+  <BR>
+  <hr>
+  <footer class="page-footer font-small blue">
+  <div class="footer-copyright text-center py-3">© 2018 Copyright:
+     <b>Viram-ms</b>
+  </div>
+</footer>
+</body>
+</html><!--Navbar-->
