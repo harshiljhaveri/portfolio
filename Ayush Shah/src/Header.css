@@ -1,0 +1,40 @@
+header{
+	background-color: #7CFC00 ;
+	height: 55vh;
+	padding-left: 30px;
+}
+
+.be{
+	padding-left: 5px;
+}
+
+.dj{
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.grade{
+	padding-left: 18px;
+}
+
+.qual{
+	padding-left: 65px;
+}
+
+.about{
+	width: 500px;
+	float:left;
+	margin-right: 160px;
+}
+
+.education{
+	float: center;
+}
+
+.projects{
+
+}
+
+table, th, td {
+   border: 1px solid black;
+}

@@ -1,0 +1,38 @@
+.section{
+	background-color: #1d809f;
+	padding-top: 20px;
+	padding-bottom: 120px;
+	text-align: center;
+}
+
+.section h2{
+	font-size: 2em;
+	color: white;
+	margin-bottom: 48px;
+	margin-top: 0;
+}
+
+.row{
+	display: flex;
+	justify-content: space-around;
+}
+
+.section > .row span{
+	background-color: white;
+	width: 112px;
+	height: 112px;
+	display: inline-block;
+	border-radius: 50%;
+	font-size: 45px;
+}
+
+.section ion-icon,i{
+	padding-top: 30%;
+	margin: 0;
+	color: #1d809f;
+}
+
+.section h4{
+	color:white;
+}
+
