@@ -1,0 +1,25 @@
+.education {
+  width: 100%;
+  max-width: 750px;
+  border-bottom: 5px solid orange;
+  /* margin-top: 0%; */
+  background: #f3f3f3;
+  margin-left: auto;
+  margin-right: auto;
+  min-height: 360px;
+}
+.edu {
+  height: 200px;
+  float: left;
+  width: 30%;
+  margin-top: 20%;
+  margin-left: 5%;
+  font-size: 30px;
+}
+.details {
+  height: inherit;
+  padding-top: 2%;
+}
+.name {
+  margin-right: 1%;
+}
