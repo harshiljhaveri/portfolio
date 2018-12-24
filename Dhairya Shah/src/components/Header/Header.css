@@ -1,0 +1,54 @@
+.header {
+  width: 100%;
+  max-width: 750px;
+  border-bottom: 5px solid orange;
+  margin-top: 3%;
+  background: #f3f3f3;
+  margin-left: auto;
+  margin-right: auto;
+  /* box-shadow: 10px 0px rgba(0, 0, 0, 0.102751); */
+  /* height: 100%; */
+  min-height: 240px;
+}
+ul {
+  margin-top: 0%;
+}
+.image {
+  border-radius: 50%;
+  float: left;
+  margin-right: 3%;
+  margin-left: 1%;
+  margin-top: 1%;
+}
+.contactdetails {
+  margin-top: 2%;
+  margin-left: 1%;
+}
+.contact {
+  float: left;
+  width: 20%;
+  margin-right: 2%;
+  border-right: 1px solid #aaaaaa;
+}
+.email {
+  float: left;
+  width: 36%;
+  margin-right: 2%;
+  border-right: 1px solid #aaaaaa;
+}
+.github {
+  float: left;
+  margin-right: 2%;
+  width: 17%;
+  color: black;
+  border-right: 1px solid #aaaaaa;
+}
+.linkedin {
+  float: left;
+  color: black;
+  width: 18%;
+  border-right: 1px solid #aaaaaa;
+}
+.name {
+  padding-top: 6%;
+}

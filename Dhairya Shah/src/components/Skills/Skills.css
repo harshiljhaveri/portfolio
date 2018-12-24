@@ -1,0 +1,23 @@
+.skills {
+  width: 100%;
+  max-width: 750px;
+  border-bottom: 5px solid orange;
+  margin-top: 0%;
+  background: #f3f3f3;
+  margin-left: auto;
+  margin-right: auto;
+  height: 200px;
+}
+.skill {
+  height: inherit;
+  width: 30%;
+  float: left;
+  margin-left: 5%;
+  margin-top: 11%;
+  font-size: 30px;
+}
+.detail {
+  width: 20%;
+  float: left;
+  margin-top: 3%;
+}
