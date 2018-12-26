@@ -1,6 +1,5 @@
-#Sagar Mahesh Bagwe
-##SE student
+# Sagar Mahesh Bagwe
+## SE student
 
-#####Website Screenshots
-![](images/ss1.png)
+##### Website Screenshot
 ![](images/fullSize.png)
